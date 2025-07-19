@@ -1,0 +1,40 @@
+GET http://localhost:3001/health
+
+
+###
+POST http://localhost:3001
+Content-Type: application/json
+
+{
+    "name":"Tamim",
+    "country":"BD",
+    "rank":2
+}
+
+###
+GET http://localhost:3001
+
+###
+GET http://localhost:3001/KIoDWKw0N
+
+###
+GET http://localhost:3001/W4YfynPov
+
+###
+PATCH http://localhost:3001/W4YfynPov
+Content-Type:application/json
+
+{
+    "name":"Tamim Iqbal khan"
+}
+
+###
+PUT http://localhost:3001/KIoDWKw0N
+
+Content-Type:application/json
+
+{
+    "name":"Masrafi Bin Martaza",
+    "country":"BD",
+    "rank":20
+}
