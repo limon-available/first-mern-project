@@ -1,4 +1,5 @@
- const express=require("express");
+require('dotenv').config();
+const express=require("express");
  const mongoose=require("mongoose");
  const app=express();
  const Book=require("./models/Book");
@@ -9,7 +10,7 @@ const cors = require('cors');
 app.use(cors());
 
 
- mongoose.connect("mongodb+srv://NazmulLimon:Nazmul112097@cluster0.muhelnp.mongodb.net/Book-Management")
+ mongoose.connect(process.env.MONGO_URL)
  .then(()=>console.log("DB is connected finally"))
  .catch(()=>console.log("DB is not connected"))
 
