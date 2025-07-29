@@ -12,10 +12,12 @@ app.use(cors());
 
  mongoose.connect(process.env.MONGO_URL)
  .then(()=>console.log("DB is connected finally"))
- .catch(()=>console.log("DB is not connected"))
+  .catch(() => console.log("DB is not connected"))
+ 
 app.get("/", (req, res) => {
   res.send("🚀 Backend is working!");
 });
+
  app.post("/books", async (req, res) => {
   try {
     const book = new Book(req.body);
