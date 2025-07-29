@@ -5,7 +5,7 @@ const port = 3000;
 
 // ✅ Proper DB connection with promise chain
 mongoose
-  .connect('mongodb://127.0.0.1:27017/Book-Management')
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("DB is connected"))
   .catch((error) => {
     console.log('DB is not connected');
