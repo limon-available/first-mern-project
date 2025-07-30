@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
   res.send("🚀 Backend is working!");
 });
 
- app.post("/books", async (req, res) => {
+ app.get("/books", async (req, res) => {
   try {
     const book = new Book(req.body);
     const saved = await book.save();
