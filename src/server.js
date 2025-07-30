@@ -7,7 +7,10 @@ const express=require("express");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: 'https://first-mern-project-gao7.vercel.app/', 
+  credentials: true
+}));
 
 
  mongoose.connect(process.env.MONGO_URL)
