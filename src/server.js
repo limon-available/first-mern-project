@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
     res.status(400).json({ error: err.message });
   }
 });
- 
+/* 
     app.get("/books", async (req, res) => {
       try {
         const {
@@ -102,6 +102,16 @@ app.get("/", (req, res) => {
     });
 
  
+*/
+app.get("/books", async (req, res) => {
+  try {
+    const books = await Book.find();
+    console.log("Books count:", books.length);
+    res.json(books);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 app.put("/books/:id", async (req, res) => {
   try {
